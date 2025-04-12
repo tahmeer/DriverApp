@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
 
 Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function () {
 
@@ -84,3 +85,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'no_auth:admin'], function ()
 
     Route::post('authenticate', [App\Http\Controllers\Admin\AdminController::class, 'authenticate']);
 });
+
+// website
+Route::get('/',[App\Http\Controllers\websiteController::class, 'homePage'])->name('website.home');
