@@ -32,7 +32,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function ()
     Route::match(['GET', 'POST'], 'createCountry', [App\Http\Controllers\Admin\UserController::class, 'createCountry'])->name('createCountry');
     Route::match(['GET', 'POST'], 'editCountry/{id}', [App\Http\Controllers\Admin\UserController::class, 'editCountry'])->name('editCountry');
     Route::post('delete/country', [App\Http\Controllers\Admin\UserController::class, 'deleteCountry'])->name('admin.country.delete');
-    Route::get('country-list', [App\Http\Controllers\Admin\UserController::class, 'countryIndex'])->name('countryList');
+    Route::get('order-list', [App\Http\Controllers\Admin\OrderController::class, 'orderIndex'])->name('orderList');
 
     // City
     Route::match(['GET', 'POST'], 'createCity', [App\Http\Controllers\Admin\UserController::class, 'createCity'])->name('createCity');

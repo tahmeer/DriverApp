@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Country List</h1>
+                        <h1 class="m-0">Order List</h1>
                     </div><!-- /.col -->
                 
                 </div><!-- /.row -->
@@ -35,7 +35,7 @@
                                         <thead>
                                             <tr>
                                                 <th scope="col">#</th>
-                                                <th scope="col">Name</th>
+                                                <th scope="col">Price</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
@@ -96,14 +96,14 @@
             var table = $('.data_table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('countryList') }}",
+                ajax: "{{ route('orderList') }}",
                 columns: [{
                         data: 'id',
                         name: 'id'
                     },
                     {
-                        data: 'name',
-                        name: 'name'
+                        data: 'price',
+                        name: 'price'
                     },
                     {
                         data: 'action',
