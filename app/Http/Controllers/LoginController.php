@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CustomerSupport;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -137,5 +138,22 @@ class LoginController extends Controller
 
     public function getDetails(Request $request){
         return "success";
+    }
+
+    public function storeCustomerSupport(Request $request){
+        try{
+            $customerSupport = new CustomerSupport();
+            $customerSupport->user_id = Auth::id();
+            $customerSupport->is_user = 1;
+            $customerSupport->message = $request->message;
+            $customerSupport->read = 0;
+            $customerSupport->save();
+
+            return response()->json(['message' => 'Success', 'data' => $customerSupport], 200);
+
+        }catch (\Throwable $th) {
+            return response(['message' => 'failure', 'error' => $th->getMessage()], 500);
+        }
+        
     }
 }

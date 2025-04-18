@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\OrderCollection;
 use App\Models\Order;
+use App\Models\OrderUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Throwable;
@@ -17,8 +18,9 @@ class OrderController extends Controller
                 'page' => 'required|integer:min:1'
             ]);
             $size = $request->size;
-            $orders = Order::where('user_id',Auth::guard('api')->id())->paginate($size);
+            $user = Auth::guard('api')->user(); // get logged-in user
 
+            $orders = $user->orders()->paginate($size);
             return new OrderCollection($orders);
         }catch(Throwable $th){
             return response(['message' => 'failure', 'error' => $th->getMessage()], 500);

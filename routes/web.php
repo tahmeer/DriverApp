@@ -17,6 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function () {
 
     Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.dashboard');
@@ -33,6 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function ()
     Route::match(['GET', 'POST'], 'editCountry/{id}', [App\Http\Controllers\Admin\UserController::class, 'editCountry'])->name('editCountry');
     Route::post('delete/country', [App\Http\Controllers\Admin\UserController::class, 'deleteCountry'])->name('admin.country.delete');
     Route::get('order-list', [App\Http\Controllers\Admin\OrderController::class, 'orderIndex'])->name('orderList');
+    Route::post('assign-order', [App\Http\Controllers\Admin\OrderController::class, 'assignOrder'])->name('admin.assign.order');
 
     // City
     Route::match(['GET', 'POST'], 'createCity', [App\Http\Controllers\Admin\UserController::class, 'createCity'])->name('createCity');

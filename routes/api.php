@@ -26,6 +26,7 @@ Route::prefix('v1')->group(function(){
 Route::middleware("auth:api")->group(function(){
     Route::prefix('v1')->group(function () {
         Route::get('get/detail', [App\Http\Controllers\LoginController::class, 'getDetails']);
-        Route::get('all-orders', [App\Http\Controllers\OrderController::class, 'orderList']);
+        Route::get('my-orders', [App\Http\Controllers\OrderController::class, 'orderList']);
+        Route::post('customer/support/store', [App\Http\Controllers\LoginController::class, 'storeCustomerSupport']);
     });
 });
