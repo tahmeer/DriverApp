@@ -16,41 +16,63 @@
 
     <header>
         <div class="container-fluid">
-            <div class="">
-                <a class="navbar-brand" href="#">Cargo<span>2GO</span></a>
-                {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button> --}}
+            <div class="logo">
+                <a href="{{ route('home') }}" class="navbar-brand">
+                    <img src="{{ asset('image/logo.png') }}" alt="">
+                </a>
+                <button class="btn btn-primary mobile-toggle" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <nav class="navbar-expand-lg bg-whites">
+            <nav class="navbar-expand-lg bg-whites d-none d-lg-block">
                 <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                     <ul class="navbar-nav gap-4">
                         <li class="nav-item">
-                            <a class="nav-link px-2 active" href="#">HOME</a>
+                            <a href="{{ route('home') }}" class="nav-link px-2 {{ request()->routeIs('home') ? 'active' : '' }}">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="#">ABOUT US</a>
+                            <a href="{{ route('about-us') }}" class="nav-link px-2 {{ request()->routeIs('about-us') ? 'active' : '' }}">ABOUT US</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="#">OUR VEHICLES</a>
+                            <a href="{{ route('our-vehicles') }}" class="nav-link px-2 {{ request()->routeIs('our-vehicles') ? 'active' : '' }}">OUR VEHICLES</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="#">SECTORS</a>
+                            <a href="{{ route('sector') }}" class="nav-link px-2 {{ request()->routeIs('sector') ? 'active' : '' }}">SECTORS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link px-2" href="#">PAYMENTS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="#">DRIVER RECRUITMENT</a>
+                            <a href="{{ route('driver-recruitment') }}" class="nav-link px-2 {{ request()->routeIs('driver-recruitment') ? 'active' : '' }}">DRIVER RECRUITMENT</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="#">CONTACT US</a>
+                            <a href="{{ route('contact-us') }}" class="nav-link px-2 {{ request()->routeIs('contact-us') ? 'active' : '' }}">CONTACT US</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </div>
     </header>
+    <!-- Sidebar -->
+    <div class="mobile-sidebar" id="sidebar">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h5 class="text-white mb-0">Menu</h5>
+            <button class="btn btn-sm text-white" onclick="toggleSidebar()">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
+        <ul>
+            <li><a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">HOME</a></li>
+            <li><a href="{{ route('about-us') }}" class="{{ request()->routeIs('about-us') ? 'active' : '' }}">ABOUT US</a></li>
+            <li><a href="{{ route('our-vehicles') }}" class="{{ request()->routeIs('our-vehicles') ? 'active' : '' }}">OUR VEHICLES</a></li>
+            <li><a href="{{ route('sector') }}" class="{{ request()->routeIs('sector') ? 'active' : '' }}">SECTORS</a></li>
+            <li><a href="#" >PAYMENTS</a></li>
+            <li><a href="{{ route('driver-recruitment') }}" class="{{ request()->routeIs('driver-recruitment') ? 'active' : '' }}">DRIVER RECRUITMENT</a></li>
+            <li><a href="{{ route('contact-us') }}" class="{{ request()->routeIs('contact-us') ? 'active' : '' }}">CONTACT US</a></li>
+        </ul>
+    </div>
+    <!-- Backdrop -->
+    <div class="sidebar-backdrop" id="backdrop" onclick="toggleSidebar()"></div>
 
     @yield('section')
 
@@ -82,7 +104,9 @@
 
                     <div class="col-md-6 mt-4 mt-md-0">
                         <div class="footer-right-side">
-                            <h1 class="mb-0">Cargo<span class="text-danger fw-bold">2GO</span></h1>
+                            <a href="#" class="footer-brand">
+                                <img src="{{ asset('image/logo.png') }}" alt="">
+                            </a>
                             <div class="footer-pages">
                                 <a href="#" class="text-white text-decoration-none">Conditions of Carriage</a>
                                 <a href="#" class="text-white text-decoration-none">Privacy & Cookie Policy</a>
@@ -111,6 +135,12 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset('js/theme-javascript.js') }}"></script>
 
+    <script>
+        function toggleSidebar() {
+            document.getElementById("sidebar").classList.toggle("active");
+            document.getElementById("backdrop").classList.toggle("active");
+        }
+    </script>
     @stack('script')
 </body>
 

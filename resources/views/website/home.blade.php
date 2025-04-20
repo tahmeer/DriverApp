@@ -39,7 +39,7 @@
                             <!-- Left section -->
                             <div class="eb-grid-left">
                                 <div class="eb-gl-circle-number">1</div>
-                                <div class="text-start eb-gl-text">
+                                <div class="eb-gl-text">
                                     <h3>Vehicle is despatched</h3>
                                     <p>Vehicle is despatched and with you within the hour</p>
                                 </div>
@@ -56,7 +56,7 @@
                             <!-- Left section -->
                             <div class="eb-grid-left">
                                 <div class="eb-gl-circle-number">2</div>
-                                <div class="text-start eb-gl-text">
+                                <div class="eb-gl-text">
                                     <h3>Vehicle is despatched</h3>
                                     <p>Vehicle is despatched and with you within the hour</p>
                                 </div>
@@ -76,27 +76,7 @@
     </section>
 
     {{-- Slanted section --}}
-    <section class="slanted-section">
-        <div class="container slanted-content">
-            <!-- Left side image -->
-            <div class="slanted-image">
-                <img src="{{ asset('image/brand-alpha-bet.png') }}" alt="G Letter" class="g-img">
-            </div>
-
-            <!-- Right side text -->
-            <div class="slanted-text">
-                <h2>Collections within 1 hour</h2>
-                <p>
-                    We have vehicles delivering throughout the UK on a daily basis, and are able to collect and deliver
-                    from any location within the UK
-                </p>
-                <button class="btn btn-secondary">
-                    REQUEST A VAN
-                    <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-    </section>
+    @include('website.common-section.slanted')
 
     {{-- Experience Section --}}
     <section class="experience-section">
@@ -157,7 +137,27 @@
             </div>
 
             <!-- Features List -->
-            <ul class="features-list">
+            <div class="row features-list justify-content-center">
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="features-list-item">
+                        <i class="fas fa-headset"></i>
+                        <p>No call centres or queuing systems</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="features-list-item">
+                        <i class="fas fa-bolt"></i>
+                        <p>Quick collections within 1 hour</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="features-list-item">
+                        <i class="fas fa-clock"></i>
+                        <p>Open 24 hours a day, all year round</p>
+                    </div>
+                </div>
+            </div>
+            {{-- <ul class="features-list">
                 <li>
                     <i class="fas fa-headset"></i>
                     <p>No call centres or queuing systems</p>
@@ -170,7 +170,7 @@
                     <i class="fas fa-clock"></i>
                     <p>Open 24 hours a day, all year round</p>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
     </section>
 
@@ -180,9 +180,9 @@
         <div class="help-sec-inner">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-xl-6">
+                    <div class="col-xl-6 col-md-6">
                         <h2 class="mb-3">Can we help?</h2>
-                        <p class="mb-5">We have vehicles delivering throughout the UK on a daily basis, we are able
+                        <p class="mb-lg-5 mb-md-3 mb-sm-2">We have vehicles delivering throughout the UK on a daily basis, we are able
                             to collect your goods from any location and deliver them to any part of the country on a
                             same day basis.</p>
                         <button class="btn btn-primary">
@@ -190,7 +190,7 @@
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
-                    <div class="col-xl-6">
+                    <div class="col-xl-6 col-md-6">
                         <ul class="help-list">
                             <li>
                                 <div class="help-icon">
@@ -217,93 +217,8 @@
         </div>
     </section>
 
-    {{-- Our Offices --}}
-    <section class="offices-section">
-        <div class="container">
-            <div class="offices-title text-center">
-                <h1>Our Offices</h1>
-                <p>Get in touch with our team across the UK</p>
-            </div>
-            <div class="row">
-                <!-- Manchester (Head Office) -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4 head-office">
-                        <h3 class="office-title">Manchester <span class="badge bg-primary">Head Office</span></h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 0161 273 7733</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> Greater Manchester, UK</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Leeds Office -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4">
-                        <h3 class="office-title">Leeds Office</h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 0113 347 0010</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> West Yorkshire, UK</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Doncaster Office -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4">
-                        <h3 class="office-title">Doncaster Office</h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 01302 460 100</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> South Yorkshire, UK</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Warrington Office -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4">
-                        <h3 class="office-title">Warrington Office</h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 01925 205000</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> Cheshire, UK</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Wakefield Office -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4">
-                        <h3 class="office-title">Wakefield Office</h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 01924 637177</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> West Yorkshire, UK</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Liverpool Office -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4">
-                        <h3 class="office-title">Liverpool Office</h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 0151 321 2500</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> Merseyside, UK</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Halifax Office -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="office-card card p-4">
-                        <h3 class="office-title">Halifax Office</h3>
-                        <div class="contact-info mt-3">
-                            <p><i class="fas fa-phone contact-icon"></i> 01422 886710</p>
-                            <p><i class="fas fa-map-marker-alt contact-icon"></i> West Yorkshire, UK</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    {{-- Offices section --}}
+    @include('website.common-section.offices')
 @endsection
 
 @push('script')
@@ -312,10 +227,10 @@
         let hSlider = new Swiper(".heroSlider", {
             effect: 'fade',
             loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
             fadeEffect: {
                 crossFade: true,
             },
@@ -324,10 +239,10 @@
         // easy booking slider
         let ebSlider = new Swiper(".easyBookingSlider", {
             loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 3000,
+            //     disableOnInteraction: false,
+            // },
             navigation: {
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
@@ -335,12 +250,12 @@
         });
         const swiper = new Swiper('.experienceSlider', {
             loop: true,
-            spaceBetween: 30,
+            spaceBetween: 25,
             slidesPerView: 1,
-            autoplay: {
-                delay: 5000,
-                disableOnInteraction: false,
-            },
+            // autoplay: {
+            //     delay: 5000,
+            //     disableOnInteraction: false,
+            // },
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
