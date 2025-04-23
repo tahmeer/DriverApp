@@ -1612,7 +1612,22 @@ footer::after {
     .form-label{
         font-size: 14px;
     }
-    /* .communication-box{
+    .communication-box{
         font-size: 14px;
-    } */
+    }
+    .payment-banner {
+        height: 220px;
+    }
+    .payment-banner::before {
+        transform: skewY(4deg);
+    }
+    .payment-banner h1{
+        font-size: 30px;
+    }
+    .payment-section h2{
+        font-size: 20px;
+    }
+    .payment-section{
+        padding: 70px 0 50px;
+    }
 }

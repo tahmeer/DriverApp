@@ -8,7 +8,7 @@
     </section>
     <section class="payment-section">
         <div class="container">
-            <h2>Payment Form</h2>
+            <h2 class="mb-5">Payment Form</h2>
             <div class="row">
                 <div class="col-md-6 col-12 mb-3">
                     <label for="name" class="form-label required-field">Name</label>
