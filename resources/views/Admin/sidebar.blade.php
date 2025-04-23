@@ -266,19 +266,19 @@
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
-                    <ul class="nav nav-treeview">
+                    {{-- <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{route('createCountry')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Add Country</p>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{route('countryList')}}" class="nav-link">
+                            <a href="{{route('orderList')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Country List</p>
+                                <p>Order List</p>
                             </a>
                         </li>
                     </ul>
