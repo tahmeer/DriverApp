@@ -40,7 +40,7 @@
                             <a href="{{ route('sector') }}" class="nav-link px-2 {{ request()->routeIs('sector') ? 'active' : '' }}">SECTORS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link px-2" href="#">PAYMENTS</a>
+                            <a href="{{ route('payment') }}" class="nav-link px-2 {{ request()->routeIs('payment') ? 'active' : '' }}" href="#">PAYMENTS</a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('driver-recruitment') }}" class="nav-link px-2 {{ request()->routeIs('driver-recruitment') ? 'active' : '' }}">DRIVER RECRUITMENT</a>
@@ -66,7 +66,7 @@
             <li><a href="{{ route('about-us') }}" class="{{ request()->routeIs('about-us') ? 'active' : '' }}">ABOUT US</a></li>
             <li><a href="{{ route('our-vehicles') }}" class="{{ request()->routeIs('our-vehicles') ? 'active' : '' }}">OUR VEHICLES</a></li>
             <li><a href="{{ route('sector') }}" class="{{ request()->routeIs('sector') ? 'active' : '' }}">SECTORS</a></li>
-            <li><a href="#" >PAYMENTS</a></li>
+            <li><a href="{{ route('payment') }}" class="{{ request()->routeIs('payment') ? 'active' : '' }}">PAYMENTS</a></li>
             <li><a href="{{ route('driver-recruitment') }}" class="{{ request()->routeIs('driver-recruitment') ? 'active' : '' }}">DRIVER RECRUITMENT</a></li>
             <li><a href="{{ route('contact-us') }}" class="{{ request()->routeIs('contact-us') ? 'active' : '' }}">CONTACT US</a></li>
         </ul>

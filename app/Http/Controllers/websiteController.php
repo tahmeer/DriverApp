@@ -22,6 +22,10 @@ class websiteController extends Controller
     {
         return view('website.sector');
     }
+    public function paymentPage()
+    {
+        return view('website.payment');
+    }
     public function driverRecruitmentPage()
     {
         return view('website.driver-recruitment');
