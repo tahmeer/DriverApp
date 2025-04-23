@@ -15,12 +15,13 @@ class OrderController extends Controller
         try{
             $request->validate([
                 'size' => 'required|integer|min:1,max:10000',
-                'page' => 'required|integer:min:1'
+                'page' => 'required|integer:min:1',
+                'type' => 'required|string|in:Pending,Ongoing,Delivered,Deteriorations'
             ]);
             $size = $request->size;
             $user = Auth::guard('api')->user(); // get logged-in user
 
-            $orders = $user->orders()->paginate($size);
+            $orders = $user->orders()->where('status', $request->type)->orderBy('created_at', 'desc')->paginate($size);
             return new OrderCollection($orders);
         }catch(Throwable $th){
             return response(['message' => 'failure', 'error' => $th->getMessage()], 500);

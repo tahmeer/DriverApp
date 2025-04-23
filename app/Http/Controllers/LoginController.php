@@ -146,7 +146,7 @@ class LoginController extends Controller
             $customerSupport->user_id = Auth::id();
             $customerSupport->is_user = 1;
             $customerSupport->message = $request->message;
-            $customerSupport->read = 0;
+            $customerSupport->read = '0';
             $customerSupport->save();
 
             return response()->json(['message' => 'Success', 'data' => $customerSupport], 200);
