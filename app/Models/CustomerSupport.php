@@ -9,4 +9,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class CustomerSupport extends Model
 {
     use HasFactory, SoftDeletes;
+
+    public function users()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id', 'id');
+    }
 }
