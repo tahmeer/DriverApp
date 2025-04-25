@@ -28,5 +28,7 @@ Route::middleware("auth:api")->group(function(){
         Route::get('get/detail', [App\Http\Controllers\LoginController::class, 'getDetails']);
         Route::get('my-orders', [App\Http\Controllers\OrderController::class, 'orderList']);
         Route::post('customer/support/store', [App\Http\Controllers\LoginController::class, 'storeCustomerSupport']);
+        Route::match(array('GET', 'POST'), 'customer/support/message', [App\Http\Controllers\CustomerSupportController::class, 'adminsupportReply']);
+
     });
 });
