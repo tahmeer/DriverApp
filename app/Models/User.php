@@ -54,5 +54,9 @@ class User extends Authenticatable
         return $this->belongsToMany(Order::class, OrderUser::class);
     }
 
+    public function customersupport()
+    {
+        return $this->hasMany('App\Models\CustomerSupport', 'user_id', 'id');
+    }
     
 }
