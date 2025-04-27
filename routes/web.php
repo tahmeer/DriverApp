@@ -13,9 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
 
 
 Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function () {
@@ -86,3 +87,13 @@ Route::group(['prefix' => 'admin', 'middleware' => 'no_auth:admin'], function ()
 
     Route::post('authenticate', [App\Http\Controllers\Admin\AdminController::class, 'authenticate']);
 });
+
+
+// website
+Route::get('/',[App\Http\Controllers\websiteController::class, 'homePage'])->name('home');
+Route::get('/about-us',[App\Http\Controllers\websiteController::class, 'aboutUsPage'])->name('about-us');
+Route::get('/our-vehicles',[App\Http\Controllers\websiteController::class, 'ourVehiclesPage'])->name('our-vehicles');
+Route::get('/sector',[App\Http\Controllers\websiteController::class, 'sectorPage'])->name('sector');
+Route::get('/payment',[App\Http\Controllers\websiteController::class, 'paymentPage'])->name('payment');
+Route::get('/driver-recruitment',[App\Http\Controllers\websiteController::class, 'driverRecruitmentPage'])->name('driver-recruitment');
+Route::get('/contact-us',[App\Http\Controllers\websiteController::class, 'contactUsPage'])->name('contact-us');
