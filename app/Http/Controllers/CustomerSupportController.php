@@ -25,7 +25,7 @@ class CustomerSupportController extends Controller
 
                     $customerSupport = new CustomerSupport;
                     $customerSupport->user_id = Auth::user()->id;
-                    $customerSupport->is_user = 0;
+                    $customerSupport->is_user = 1;
                     $customerSupport->message = $request->msg;
                     $customerSupport->save();
 
