@@ -40,7 +40,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['guest:admin']], function ()
     Route::match(['GET', 'POST'], 'createCity', [App\Http\Controllers\Admin\UserController::class, 'createCity'])->name('createCity');
     Route::match(['GET', 'POST'], 'editCity/{id}', [App\Http\Controllers\Admin\UserController::class, 'editCity'])->name('editCity');
     Route::post('delete/city', [App\Http\Controllers\Admin\UserController::class, 'deleteCity'])->name('admin.city.delete');
-    Route::get('city-list', [App\Http\Controllers\Admin\UserController::class, 'cityIndex'])->name('cityList');
+    Route::get('customer-support-list', [App\Http\Controllers\Admin\CustomerSupportController::class, 'customerSupportIndex'])->name('customerSupportList');
+    Route::match(array('GET', 'POST'), 'customer/support/message', [App\Http\Controllers\Admin\CustomerSupportController::class, 'adminsupportReply'])->name('admin.customer.support.message');
 
     // Ministry
     Route::match(['GET', 'POST'], 'createMinistry', [App\Http\Controllers\Admin\UserController::class, 'createMinistry'])->name('createMinistry');

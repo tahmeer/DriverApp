@@ -262,7 +262,7 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            Country
+                            Order
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -287,21 +287,16 @@
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-edit"></i>
                         <p>
-                            City
+                            Customer Support
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        
                         <li class="nav-item">
-                            <a href="{{route('createCity')}}" class="nav-link">
+                            <a href="{{route('customerSupportList')}}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Add City</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{route('cityList')}}" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>City List</p>
+                                <p>Customer Support List</p>
                             </a>
                         </li>
 
