@@ -1,6 +1,6 @@
     <!-- Hero Banner -->
     <section class="inner-banner">
-        <img src="{{ asset('image/Banner-1.png') }}" alt="Cargo Truck" />
+        <img src="{{ asset('image/Banner-1.jpg') }}" alt="Cargo Truck" />
         <div class="container">
             <div class="inner-banner-content">
                 <h1>{{ $title ?? 'Title' }}</h1>

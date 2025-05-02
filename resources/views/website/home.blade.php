@@ -5,11 +5,11 @@
         <div class="swiper heroSlider">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                    <img src="{{ asset('image/Banner-1.png') }}" alt="Cargo Truck" />
+                    <img src="{{ asset('image/Banner-1.jpg') }}" alt="Cargo Truck" />
                 </div>
-                <div class="swiper-slide">
+                {{-- <div class="swiper-slide">
                     <img src="{{ asset('image/banner-3.jpg') }}" alt="Cargo Truck" />
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="container">
@@ -47,7 +47,7 @@
 
                             <!-- Right image section -->
                             <div class="text-start">
-                                <img src="{{ asset('image/eb-images-1.png') }}" alt="Vehicle" class="van-img">
+                                <img src="{{ asset('image/eb-images-1.jpg') }}" alt="Vehicle" class="van-img">
                             </div>
                         </div>
                     </div>
@@ -64,7 +64,7 @@
 
                             <!-- Right image section -->
                             <div class="text-center">
-                                <img src="{{ asset('image/eb-images-1.png') }}" alt="Vehicle" class="van-img">
+                                <img src="{{ asset('image/eb-images-1.jpg') }}" alt="Vehicle" class="van-img">
                             </div>
                         </div>
                     </div>
@@ -98,7 +98,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="exp-card h-100">
-                            <img src="{{ asset('image/eb-images-1.png') }}" alt="Breadth of Service">
+                            <img src="{{ asset('image/eb-images-1.jpg') }}" alt="Breadth of Service">
                             <div class="exp-card-body">
                                 <h5>Breadth of Service</h5>
                                 <p>By choosing Cargo 2 Go, you will have access to all commercial vehicles, from small
@@ -120,7 +120,7 @@
                     </div>
                     <div class="swiper-slide">
                         <div class="exp-card h-100">
-                            <img src="{{ asset('image/eb-images-1.png') }}" alt="Breadth of Service">
+                            <img src="{{ asset('image/eb-images-1.jpg') }}" alt="Breadth of Service">
                             <div class="exp-card-body">
                                 <h5>Breadth of Service</h5>
                                 <p>By choosing Cargo 2 Go, you will have access to all commercial vehicles, from small
@@ -176,7 +176,7 @@
 
     {{-- Help Section --}}
     <section class="help-section">
-        <img src="{{ asset('image/Banner-1.png') }}" alt="" class="help-banner">
+        <img src="{{ asset('image/Banner-1.jpg') }}" alt="" class="help-banner">
         <div class="help-sec-inner">
             <div class="container">
                 <div class="row align-items-center">

@@ -14,7 +14,7 @@
             <div class="van-card">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-12">
-                        <img src="{{ asset('image/small-van.png') }}" alt="Small Van" class="van-card-img">
+                        <img src="{{ asset('image/small-van.jpg') }}" alt="Small Van" class="van-card-img">
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="van-card-content">
@@ -42,7 +42,7 @@
             <div class="van-card van-card-reverse">
                 <div class="row align-items-center flex-md-row-reverse">
                     <div class="col-lg-6 col-12">
-                        <img src="{{ asset('image/short-wheel-van.png') }}" alt="Small Van" class="van-card-img">
+                        <img src="{{ asset('image/short-wheel-van.jpg') }}" alt="Small Van" class="van-card-img">
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="van-card-content">
@@ -70,7 +70,7 @@
             <div class="van-card">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-12">
-                        <img src="{{ asset('image/long-wheel-van.png') }}" alt="Small Van" class="van-card-img">
+                        <img src="{{ asset('image/long-wheel-van.jpg') }}" alt="Small Van" class="van-card-img">
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="van-card-content">
@@ -98,7 +98,7 @@
             <div class="van-card van-card-reverse">
                 <div class="row align-items-center flex-md-row-reverse">
                     <div class="col-lg-6 col-12">
-                        <img src="{{ asset('image/long-wheel-van.png') }}" alt="Small Van" class="van-card-img">
+                        <img src="{{ asset('image/long-wheel-van.jpg') }}" alt="Small Van" class="van-card-img">
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="van-card-content">
@@ -126,7 +126,7 @@
             <div class="van-card">
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-12">
-                        <img src="{{ asset('image/lutton-van.png') }}" alt="Small Van" class="van-card-img">
+                        <img src="{{ asset('image/lutton-van.jpg') }}" alt="Small Van" class="van-card-img">
                     </div>
                     <div class="col-lg-6 col-12">
                         <div class="van-card-content">

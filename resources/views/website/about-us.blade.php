@@ -40,7 +40,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6 col-12">
                     <div class="as-img">
-                        <img src="{{asset('image/about-2.png')}}" alt="">
+                        <img src="{{asset('image/eb-images-1.jpg')}}" alt="">
                     </div>
                 </div>
                 <div class="col-md-6 col-12">
