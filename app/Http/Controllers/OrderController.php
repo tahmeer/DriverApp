@@ -7,6 +7,7 @@ use App\Models\Order;
 use App\Models\OrderUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 use Throwable;
 
 class OrderController extends Controller
@@ -30,5 +31,41 @@ class OrderController extends Controller
         }catch(Throwable $th){
             return response(['message' => 'failure', 'error' => $th->getMessage()], 500);
         }
+    }
+
+    public function paymentPage(Request $request){
+        if ($request->isMethod('post')) {
+            // dd($request->all());
+            $rules  = [
+                'pickup_location' => 'required|string',
+                'drop_location' => 'required|string',
+                'delivery_type' => 'required|in:Cargo,Food',
+                'price' => 'required|numeric',
+                'note' => 'required|string',
+                'phone_number' => 'required|string',
+            ];
+
+            if($request->delivery_type == "Cargo"){
+                $rules['weight'] = 'required|numeric'; 
+
+            }
+            $request->validate($rules);
+    
+            $order = new Order();
+            $order->pickup_location = $request->pickup_location;
+            $order->drop_location = $request->drop_location;
+            $order->delivery_type = $request->delivery_type;
+            $order->weight = $request->delivery_type == "Cargo" ? $order->weight : null;
+            $order->price = $request->price;
+            $order->note = $request->note;
+            $order->phone_number = $request->phone_number;
+            $order->status = "Pending";
+            $order->payment_status = "COD";
+            $order->save();
+
+            return "Order Placed";
+    
+        }
+        return view('website.payment');
     }
 }
